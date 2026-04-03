@@ -7,9 +7,9 @@ const THEME_KEY = 'finance_theme';
 
 const loadRole = () => {
   try {
-    return localStorage.getItem(ROLE_KEY) || 'admin';
+    return localStorage.getItem(ROLE_KEY) || 'viewer';
   } catch (_) {
-    return 'admin';
+    return 'viewer';
   }
 };
 
@@ -17,9 +17,9 @@ const loadRole = () => {
 
 const loadTheme = () => {
   try {
-    return localStorage.getItem(THEME_KEY) || 'dark';
+    return localStorage.getItem(THEME_KEY) || 'light';
   } catch (_) {
-    return 'dark';
+    return 'light';
   }
 };
 
