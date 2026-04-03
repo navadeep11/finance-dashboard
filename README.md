@@ -6,7 +6,7 @@ A modern, responsive, and robust personal finance dashboard built with **React**
 
 ## 📸 Screenshots
 
-*(Replace the placeholder links below with the paths to the screenshots you captured! E.g. `![Dashboard Admin](./public/dashboard-admin.png)`)*
+*(Replace the placeholder links below with the paths to the screenshots you captured!*
 
 ![User Dashboard Profile - Overview & Actions](/screenshots/img1.png)
 
@@ -55,7 +55,7 @@ The core premise behind this application's architecture was "Scalability." While
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/finance-dashboard.git
+   git clone https://github.com/navadeep11/finance-dashboard.git
    cd finance-dashboard
    ```
 
@@ -72,6 +72,9 @@ The core premise behind this application's architecture was "Scalability." While
 
 4. **Visit the app**:
    Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+5. **Deployed app**:
+   Open (https://finance-dashboard-track.netlify.app/) in your browser.
 
 ### Developer Tips
 - You can toggle the active user Role (Admin/Viewer) from the Top Navigation bar.
