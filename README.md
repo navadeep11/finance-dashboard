@@ -6,7 +6,7 @@ A modern, responsive, and robust personal finance dashboard built with **React**
 
 ## 📸 Screenshots
 
-*(Replace the placeholder links below with the paths to the screenshots you captured!*
+*(Replace the placeholder links below with the paths to the screenshots you captured!)*
 
 ![User Dashboard Profile - Overview & Actions](/screenshots/img1.png)
 
