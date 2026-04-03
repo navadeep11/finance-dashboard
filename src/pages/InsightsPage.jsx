@@ -115,19 +115,19 @@ export default function InsightsPage() {
                 const pct = totalExp > 0 ? (cat.value / totalExp) * 100 : 0;
                 const color = DOT_COLORS[cat.name] || '#94a3b8';
                 return (
-                  <div key={cat.name} className="grid grid-cols-[1.5fr_2fr_auto] items-center gap-4">
-                    <div className="flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: color }} />
-                      <span className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">{cat.name}</span>
-                      {i === 0 && <Badge variant="expense">Top</Badge>}
+                  <div key={cat.name} className="grid grid-cols-[1fr_1fr_auto] sm:grid-cols-[1.5fr_2fr_auto] items-center gap-2 sm:gap-4">
+                    <div className="flex items-center gap-2 min-w-0">
+                      <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full flex-shrink-0" style={{ background: color }} />
+                      <span className="text-xs sm:text-sm font-medium text-slate-900 dark:text-slate-100 truncate">{cat.name}</span>
+                      {i === 0 && <span className="hidden sm:inline-block"><Badge variant="expense">Top</Badge></span>}
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="flex-1 h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+                    <div className="flex items-center gap-1 sm:gap-2 min-w-0">
+                      <div className="flex-1 h-1.5 sm:h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                         <div className="h-full rounded-full transition-all duration-700" style={{ width: `${pct}%`, background: color }} />
                       </div>
-                      <span className="text-xs text-slate-400 w-10 text-right">{pct.toFixed(1)}%</span>
+                      <span className="text-[10px] sm:text-xs text-slate-400 w-8 sm:w-10 text-right">{pct.toFixed(1)}%</span>
                     </div>
-                    <span className="text-sm font-semibold text-slate-900 dark:text-slate-100 tabular-nums text-right">{formatCurrency(cat.value)}</span>
+                    <span className="text-xs sm:text-sm font-semibold text-slate-900 dark:text-slate-100 tabular-nums text-right">{formatCurrency(cat.value)}</span>
                   </div>
                 );
               })}
@@ -144,20 +144,20 @@ export default function InsightsPage() {
         </CardHeader>
         <div>
           {top5.map((tx, i) => (
-            <div key={tx.id} className="flex items-center gap-4 py-4 border-b border-slate-100 dark:border-dark-border last:border-0">
-              <span className={`text-xl font-bold w-8 text-center flex-shrink-0
+            <div key={tx.id} className="flex items-center gap-2 sm:gap-4 py-4 border-b border-slate-100 dark:border-dark-border last:border-0">
+              <span className={`text-lg sm:text-xl font-bold w-6 sm:w-8 text-center flex-shrink-0
                 ${i===0?'text-yellow-400':i===1?'text-slate-400':i===2?'text-amber-600':'text-slate-400'}`}>
                 #{i+1}
               </span>
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">{tx.description}</p>
-                <p className="text-xs text-slate-400">{tx.category} · {formatDate(tx.date)}</p>
+                <p className="text-xs sm:text-sm font-medium text-slate-900 dark:text-slate-100 truncate">{tx.description}</p>
+                <p className="text-[10px] sm:text-xs text-slate-400 truncate">{tx.category} · {formatDate(tx.date)}</p>
               </div>
-              <div className="flex items-center gap-2 flex-shrink-0">
-                <span className={`text-sm font-semibold tabular-nums ${tx.type==='income'?'text-income':'text-expense'}`}>
+              <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+                <span className={`text-xs sm:text-sm font-semibold tabular-nums ${tx.type==='income'?'text-income':'text-expense'}`}>
                   {tx.type==='income'?'+':'-'}{formatCurrency(tx.amount)}
                 </span>
-                <Badge variant={tx.type}>{tx.type}</Badge>
+                <span className="hidden sm:inline-block"><Badge variant={tx.type}>{tx.type}</Badge></span>
               </div>
             </div>
           ))}
